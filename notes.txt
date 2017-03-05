@@ -1,0 +1,15 @@
+Below is Review for book
+Weyl Estelle. Mobile HTML5, 2014 
+Code for this book: http://standardista.com/mobile/
+
+Fun screen size test 
+http://www.quirksmode.org/m/tests/widthtest.html
+
+<!-- valid html5 header: -->
+<!DOCTYPE html> 
+
+In HTML5, elements are defined as sectioning, heading, phrase, embedded, flow, metadata, and interactive elements. Semantically, however, some of the ideas remain the same.In HTML5, elements are defined as sectioning, heading, phrase, embedded, flow, metadata, and interactive elements. Semantically, however, some of the ideas remain the same.
+
+The id, class, title, style, lang, and dir attributes continue to be supported on all elements. HTML5 adds accesskey, hidden, and tabindex, along with five proposed interactive attributes, contenteditable, contextmenu, spellcheck, draggable, and dropzone, to the list of core attributes.
+
+Наряду с глобальными атрибутами все элементы могут иметь атрибуты микроданных, роли WIA-ARIA, aria-атрибуты, а также специальные атрибуты данных. К последней категории относятся атрибуты, которые задаем мы сами. Они записываются как data-*, астериск (*) в данном случае означает, что этот атрибут создали мы сами. Префикс data- введен в HTML5 для того, чтобы разработчики могли сами создавать атрибуты и эти атрибуты не вызывали конфликтов при работе в последующих версиях HTML.

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<title>Attributes</title>
+</head>
+<body>
+<h1>Attributes</h1>
+<h2>Global (core) attributes from HTML4</h2>
+<h3>id</h3>
+	<a href="https://google.com" id="google">Google</a>
+
+<h3>class</h3>
+	<a href="http://ya.ru" class="external popup search">Yandex</a>
+
+<h3>title</h3>
+	<a href="http://ya.ru" title="Yandex">Yandex</a>
+
+<h3>style</h3>
+	<a href="http://[::1]" style="Yandex">This attribute can come in handy for quick prototyping. Other than prototyping, there should never be a need to use this attribute, as web standards dictate to separate content from presentation!</a>
+
+<h3>lang</h3>
+	<a href="http://[::1]" lang="English">lang</a>
+
+<h3>dir</h3>
+the dir attribute can be used to change the direction of text when writing Arabic, Hebrew, or other right-to-left languages. The default value of the dir attribute is ltr (left to right). Possible values of the dir attribute include rtl, ltr, and auto.
+
+
+<h2>Global attributes from HTML5</h2>
+There are also two accessibility attributes supported on interactive elements that are now global attributes in HTML5.
+
+<h3>tabindex</h3>
+In HTML5, the global nature of the tabindex attribute adds focusability to all elements — not just form elements and links. The attribute takes as its value an integer. As the user tabs, the elements with the tabindex attribute will receive focus in sequential order based on the value of the tabindex attribute’s numeric value—for tabindexes that have a positive value.
+
+<p>Obviously we don’t want to actually change the tab or keyboard focus order from the source order of the page, the only values of tabindex should be 0 or −1. The value of tabindex="-1" (any negative value works, but −1 is the convention) can be used for programmatic focus and tabindex="0" for accessibility reasons only, if you want to provide keyboard access to an element other than a link or form element without changing the order of the page.</p>
+
+
+<h3>accesskey</h3>
+The accesskey attribute’s value creates keyboard shortcuts. For example, &ltinput accesskey="s" name="search" type="text"/> creates a search input box <input type="text" name="search" accesskey="s"/> with an accesskey of s. When the user presses on the letter “s,” the focus moves to the search input.
+But itin different browsers work's a little different: <i>Internet Explorer</i>: Alt + S, <i>Chrome</i>: Alt + S
+<i>Opera</i>: Shift + Esc, S, <i>Safari</i>: Alt + S, <i>Firefox</i>: Shift + Alt + S
+
+<br>
+<p>I'm stops at 66 page in Russian version of the book</p>
+</body>
