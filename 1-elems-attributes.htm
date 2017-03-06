@@ -21,10 +21,11 @@
 	<a href="http://[::1]" lang="English">lang</a>
 
 <h3>dir</h3>
-the dir attribute can be used to change the direction of text when writing Arabic, Hebrew, or other right-to-left languages. The default value of the dir attribute is ltr (left to right). Possible values of the dir attribute include rtl, ltr, and auto.
+<code>Obsolete now! Need use &ltul> instead. See more <a href="http://w3c.github.io/html/obsolete.html#non-conforming-features">W3C site</a>.</code>
+<p>the dir attribute can be used to change the direction of text when writing Arabic, Hebrew, or other right-to-left languages. The default value of the dir attribute is ltr (left to right). Possible values of the dir attribute include rtl, ltr, and auto.</p>
 
 
-<h2>Global attributes from HTML5</h2>
+<h2>Global attributes for HTML5 from non-global in HTML4</h2>
 There are also two accessibility attributes supported on interactive elements that are now global attributes in HTML5.
 
 <h3>tabindex</h3>
@@ -38,6 +39,18 @@ The accesskey attribute’s value creates keyboard shortcuts. For example, &ltin
 But itin different browsers work's a little different: <i>Internet Explorer</i>: Alt + S, <i>Chrome</i>: Alt + S
 <i>Opera</i>: Shift + Esc, S, <i>Safari</i>: Alt + S, <i>Firefox</i>: Shift + Alt + S
 
-<br>
-<p>I'm stops at 66 page in Russian version of the book</p>
+
+<h2>New global attributes for HTML5: Global Accessibility and Interactive Attributes</h2>
+<h3>hidden</h3>
+The hidden attribute indicates that the element is not yet, or is no longer, relevant.  It is best not to use this attribute simply to hide elements from the user since it has semantic meaning: it indicates that the content encompassed in this hidden attribute is either outdated or otherwise not relevant.
+
+<h3>contenteditable</h3>
+<p contenteditable="true">The contenteditable attribute indicates whether an element is editable or not. When included, user changes to your content are not saved, but they do change the DOM, so you can capture the changes and send them back to the server to be saved. The contenteditable attribute is supported in all of the desktop browsers and all mobile devices except Opera Mini, with support starting in Android 3.0 and iOS 5.</p>
+<p>When an element has the contenteditable attribute set, the dynamic keyboards on touch devices should pop open to enable editing.</p>
+
+<h3>draggable</h3>
+The draggable attribute indicates whether an element is draggable or not. You may have noticed that you can drag images in most desktop browsers, but you can’t drop them. This is the default draggable behavior in action. For the draggable attribute to be useful, it should be used in conjunction with JavaScript event handlers such as dragstart, drag, dragenter, dragleave, dragover, drop, and dragend.
+
+
+
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HTML5 elements: syntax ang components</title>
+</head>
+<body>
+
+<h1>Syntax</h1>
+Self-closing, or empty elements, include:
+<pre>
+&ltimg/> Image
+&ltbr/> Line break
+&ltmeta/> Metadata
+&lthr/> Thematic break
+&ltbase/> Base URL and default target for resources and links
+&ltlink/> Link
+&ltkeygen/> Cryptographic key/pair generator form control
+&ltarea/> Image map area
+&ltcol/> Table column
+&ltcommand/> Menu command
+&ltembed/> Plug-in
+&ltinput/> Form control
+&ltparam/> Parameter for object
+&ltsource/> Audio or video media source
+&lttrack/> Timed media tracking
+&ltwbr/> Linebreaking opportunity
+</pre>
+
+<h1>Components</h1>
+<h2>Miniman HTML5 document</h2>
+ The shortest possible HTML5 document is actually:
+<p/>&lt!DOCTYPE html>
+<p/>&lttitle>&lt/title>
+
+<h2>Required components</h2>
+In reality, for a web page to be valid XHTML it only requires five components:
+<li> The document type declaration, or DTD</li>
+<li> The HTML root element: &lthtml>&lt/html></li>
+<li> The head of the document, a direct child of html: &lthead>&lt/head></li>
+<li> The document title, found in the head: &lttitle>&lt/title></li>
+<li> The body of the document, a direct child of html: &ltbody>&lt/body></li>
+
+
+<h3>&lthtml></h3>
+<h4>lang</h4>
+
+lang="en"
+
+<h3>&lthead></h3>
+&lthead> is the parent element for the required &lttitle>, and the optional &ltstyle>,
+&ltscript>, &ltlink>, &ltmeta>, and &ltbase> elements.
+<h4>&ltmeta></h4>
+There are four attributes specific to <meta>: charset, http-equiv, content, and name.
+<p>&ltmeta charset="utf-8"/></p>
+<p>&ltmeta http-equiv="Content-Type" content="text/html; charset=utf-8"/></p>
+<p>&ltmeta name="description" content="Content description for search engines"></p>
+<p>&ltmeta name="keyword" content="list, of, keywords"></p>
+<p>&ltmeta http-equiv="...">.</p>
+<p>The http-equiv attribute, used instead of name, can replace the server creation of an HTTP response message header. The values of the http-equiv attribute mimic the HTTP response headers. See more <a href="http://www.standardista.com/html5/http-equiv-the-meta-attribute-explained">on the site</a>.</p>
+<br/>
+<p>&ltmeta name="viewport"  content="user-scalable=no, width=device-width, initial-scale=1.0"/></p>
+<p>The "viewport" <meta> tag allows us to dictate the logical dimensions and scaling of the browser viewport window on mobile.</p> 
+<p>The viewport &ltmeta> tag supports a comma-delimited list of directives allowing us to dictate the width, scale, and height of the browser viewport. You can tell the browser to not allow scaling, or to scale up to a maximum or down to a minimum value.
+</p>
+<li><p><i>width=&ltnum>|device-width</i></p>
+<p>Generally, you’ll want to use the key term device-width to set the viewport width to the width of the device, though numeric values are also valid. The default value differs by browser, but is generally around 980. The minimum value is 200, the maximum 10,000.</p>
+<li><p><i>height=&ltnum>|device-height</i></p></li>
+<p>Set to device-height defines the viewport height. This value is generally omitted in favor of using only width. For reference, the minimum value is 223.</p></li>
+<li><p><i>user-scalable=no|yes</i></p>
+<p>Determines whether or not the user can zoom in and out to change the scale of the viewport. Set to yes to allow scaling and no to disallow scaling. The default is yes. Setting to no also prevents scrolling on data entry. User scaling, if allowed, can be limited by the minimum-scale and maximum-scale properties of the viewport &ltmeta>.</p></li>
+<li><p><i>initial-scale=&ltfloat></i></p>
+<p>Sets the initial scaling or zoom factor (or multiplier) used for viewing a web page. The default value of 1.0 displays the web page unscaled.</p></li>
+<li><p><i>maximum-scale=&ltfloat></i></p>
+<p>Sets the user’s maximum limit for scaling or zooming unless user-scalable is set to no. The maximum value is 10, but can be a float value of 0.25 or larger.</p></li>
+<li><p><i>minimum-scale=&ltfloat></i></p>
+<p>Sets the user’s minimum limit for scaling or zooming a web page. The minimum value is 0.25.</p></li>
+
+<h3>&ltbody></h3>
+In general, you should only be adding global attributes, such as class or id, to the opening &ltbody> tag. 
+
+
+
+<br/>
+<br/>
+<p>I stopped on page 84 in Russian version of the book.</p>
+
+</body>
+</html>
