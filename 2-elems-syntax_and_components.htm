@@ -58,6 +58,7 @@ There are four attributes specific to <meta>: charset, http-equiv, content, and 
 <p>&ltmeta http-equiv="...">.</p>
 <p>The http-equiv attribute, used instead of name, can replace the server creation of an HTTP response message header. The values of the http-equiv attribute mimic the HTTP response headers. See more <a href="http://www.standardista.com/html5/http-equiv-the-meta-attribute-explained">on the site</a>.</p>
 <br/>
+<h4>viewport</h4>
 <p>&ltmeta name="viewport"  content="user-scalable=no, width=device-width, initial-scale=1.0"/></p>
 <p>The "viewport" <meta> tag allows us to dictate the logical dimensions and scaling of the browser viewport window on mobile.</p> 
 <p>The viewport &ltmeta> tag supports a comma-delimited list of directives allowing us to dictate the width, scale, and height of the browser viewport. You can tell the browser to not allow scaling, or to scale up to a maximum or down to a minimum value.
@@ -74,15 +75,115 @@ There are four attributes specific to <meta>: charset, http-equiv, content, and 
 <p>Sets the user’s maximum limit for scaling or zooming unless user-scalable is set to no. The maximum value is 10, but can be a float value of 0.25 or larger.</p></li>
 <li><p><i>minimum-scale=&ltfloat></i></p>
 <p>Sets the user’s minimum limit for scaling or zooming a web page. The minimum value is 0.25.</p></li>
+<h4>apple-mobile-web-app-capable</h4>
+This &ltmeta> tag reads “apple” but is also supported on Android; it sets whether a web application runs in fullscreen mode.
+
+<h4>apple-mobile-web-app-status-bar-style</h4>
+&ltmeta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<p>The iOS values for this are default, black, and black-translucent.</p>
+<h4>format-detection</h4>
+&ltmeta name="format-detection" content="telephone=no"/> 
+<p>By default, some devices automatically detect strings formatted like phone numbers, creating links where none existed that allow for direct calling, or at least the launch of the phone application with the phone number pre-entered. Specifying telephone="no" disables this feature.</p>
+<h4>base</h4>
+The &ltbase> element gives a base URL for de-referencing relative URLs. 
+<p>For example, suppose you have a relative image in your code such as &ltimg src="image/drongo.gif" alt="Meandering Racket-Tailed Drongo"/>.</p>
+<p>By including the &ltbase src="http://RacketTailedDrongo.com"/>, the browser will go to the image directory on the RacketTailedDrongo.com server to find drongo.gif</p>
+<h4>link</h4>
+<p>The &ltlink> element provides the ability to define relationships among your HTML document and other documents and resources. <link> can be used to control print rendering, to link stylesheets and scripts, to define favicons, or to provide alternative forms of the current document.</p>	
+The &ltlink> element can include several attributes: href, rel, type, sizes, hreflang, media, and title. The rev and charset attributes have both been removed from &ltlink> in HTML5. Here’s the syntax:
+<p>&ltlink href="url to resource" rel="type of relationship" title="title"/></p>
+<h5>&ltlink> for your stylesheets</h5>
+<p>This powerful little &ltlink> element can be used to send different stylesheets to a phone, tablet, and desktop. It can be used to serve up different stylesheets depending on the tilt of any type of mobile phone or the width of the user’s browser.</p>
+<p>Examples:</p>
+<p>&ltlink href="/css/styles.css" media="all" rel="stylesheet"/></p>
+<p>&ltlink href="/css/tinylittledevice.css"
+ media="only screen and (max-device-width: 480px)" rel="stylesheet"/></p>
+<p>&ltlink href="/css/print.css" media="print" rel="stylesheet"/></p>
+<p>Note that thetype="text/css" attribute/value pair is missing. There is currently no other type of stylesheet language (nor do I see any forthcoming), so HTML5 assumes that the type is text/css, and explicitly stating it is not necessary. </p>
+<h5>Attributes of &ltlink> tag</h5>
+<p>href Required. The “hyperlink reference” is the URL for the destination file of the &ltlink>.</p>
+<p>media Describes to which media the contents of the link will be included.</p>
+<p>rel Specifies relationship of &ltlink> to current document.</p>
+<p>hreflang Language of the linked media.</p>
+<p>type MIME type of the linked media. Optional unless the value is not of type expected by the rel relationship.</p>
+<p>sizes New. If media is an icon, it defines the size of the icon.</p>
+<h6>The media attribute</h6>
+<p>Values used to be fairly limited, with values such as screen for desktops and print for printers, etc. Values for media included: screen, tty, tv, projection, handheld, print, braille, aural, and all.</p>
+<p>For example, mobile device flipping
+and desktop browser resizing will change the screen aspect ratio from portrait to land‐
+scape and back again, so you can serve different CSS files when in portrait versus when
+in landscape mode:</p>
+<p>&ltlink rel="stylesheet" media="all and (orientation:portrait)" href="prtrt.css"/></p>
+<p>&ltlink rel="stylesheet" media="all and (orientation:landscape)" href="lndscp.css"/></p>
+<p>The media attributes includes:</p>
+<li> (min/max)-width: Viewport width
+<li> (min/max)-height: Viewport height
+<li> (min/max)-device-width: Screen width
+<li> (min/max)-device-height: Screen height
+<li> orientation: Portrait(h>w) | landscape(w>h)
+<li> (min/max)-aspect-ratio: Width/height
+<li> (min/max)-device-aspect-ratio: Device-width/height
+<p>Several &ltlink> attributes that were in HTML 4 have since been removed from the HTML5 spec, including the coords, shape, urn, target, charset, methods, and rev attributes. Also, the title attribute has special semantics on this element.</p>
+<h6>The rel attribute</h6>
+<p><b>stylesheet</b> The most commonly used value of the rel attribute, informing the browser that the linked file should
+be used to render the presentation of the current document. When including stylesheet, type="text/css" is no longer a required attribute/value pair, as text/css is the only type of stylesheet language, and is therefore inferred.</p>
+<p><b>next</b> The link references the next document in a guided tour or next document in an ordered series. The spec was originally meant to aid in the preloading of the subsequent file, improving user experience.</p>
+<p><b>prev</b> The link references the previous document in a guided tour or previous document in an ordered series.</p>
+<p><b>index</b> Index for the document.</p>
+<p><b>help</b> The link references a document offering help, (e.g., describing the wider context and offering further links to relevant documents). This is aimed at reorienting users who have lost their way.</p>
+<p><b>contents</b> Links to a document containing a table of contents for the document or site.</p> 
+<p><b>alternate</b> Specifies an alternate version of the document. When used in conjunction with the hreflang attribute, it implies the linked file is a translation of the document. When used in conjunction with the media attribute, it implies a media-specific version, such as for a printer. When combined with stylesheet, it indicates that there is an alternate stylesheet for the user to select.</p>
+<p><b>copyright</b> References a copyright statement for the document or site.</p>
+<p><b>glossary</b> A document with definitions of terms used in the current document.</p>
+<p><b>icon</b> The favicon for the page or website.</p>
+<p><b>apple-touchicon</b> Defines which icon is displayed on the user’s screen when a web application is bookmarked and added to the screen.</p>
+<p><b>apple-touchstartup-image</b> A startup image that is displayed while the web application launches. This is especially useful when your web application is offline. If not included, some browsers will display a screenshot of the web application the last time it was accessed.</p>
+
+<p>Android and iOS both support the apple-touch-icon and apple-touch-startupimage.</p>
+<p>Windows Phone has tiles instead of icons. To include tile information, include:</p>
+<p>&ltmeta name="msapplication-TileColor" content="#&ltcolor>"/></p>
+<p>&ltmeta name="msapplication-TileImage" content="&ltimage reference>"/></p>
+
+<h4>&ltstyle></h4>
+<p>Unlike styles imported via the &ltlink> element, the styles included in the &ltstyle> tag in the head of the page are applied to the current page only, and are therefore not natively accessible in the cache for other documents to use. Unlike styles added using the style attribute on an element, which only impact the element on which the attribute is placed until the scoped attribute is supported, styles included within &ltstyle> are applicable to the matched selectors in the entire document.</p>
+<p>The &ltstyle> element used to require the type attribute (generally, type="text/css"). It can be omitted in HTML5, in which case its presence with the value of "text/css" is implied. Like the &ltlink> tag, the &ltstyle> accepts the media attribute.</p>
+<p>New in HTML5, but not yet supported in any browser, is the scoped attribute. Adding the scoped attribute to the &ltstyle> element tells the rendering agent to apply that CSS only within the scope, or section, in which that style is found. This will be useful when creating widgets appearing on sites over which you may have no control, ensuring that the CSS for your widget doesn’t accidentally overwrite the hosting website’s CSS.</p>
+<p><i>For the past 12 years, it has always been recommended to use &ltlink> to include site-wide styles instead of &ltstyle>. Including CSS via &ltstyle> may reduce the number of HTTP requests, but it does not allow for caching. This is obviously not optimal.</i></p>
+<h4>&ltscript></h4> 
+&ltscipt> and &ltnoscript>
+The type attribute was required in XHTML and was
+almost always type="text/javascript". In HTML5, the type is assumed to be text/
+javascript. As long as your script is JavaScript, the type attribute should be omitted.
+Also, the language attribute has been made obsolete.
+
 
 <h3>&ltbody></h3>
-In general, you should only be adding global attributes, such as class or id, to the opening &ltbody> tag. 
+<p>In general, you should only be adding global attributes, such as class or id, to the opening &ltbody> tag.</p>
+<p>The &ltbody> has no element-specific attributes, but has many event handlers, including:</p>
+<li>onafterprint </li>
+<li>onbeforeprint</li>
+<li>onbeforeunload</li>
+<li>onblur</li>
+<li>onerror</li>
+<li>onfocus</li>
+<li>onhashchange</li>
+<li>onload</li>
+<li>onmessage</li>
+<li>onoffline</li>
+<li>ononline</li>
+<li>onpopstate</li>
+<li>onredo</li>
+<li>onresize</li>
+<li>onstorage</li>
+<li>onundo</li>
+<li>onunload</li>
+<p>It is best to include these event handlers within your external JavaScript and not within the &ltbody> element. </p>
 
 
 
 <br/>
 <br/>
-<p>I stopped on page 84 in Russian version of the book.</p>
+<p>I stopped on page 133 in Russian version of the book.</p>
 
 </body>
 </html>
